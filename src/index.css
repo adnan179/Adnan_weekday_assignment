@@ -1,13 +1,206 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: none;
+  border-radius: 10px;
+  gap: 5px;
+}
+.card-container__posted {
+  display: flex;
+  flex-direction: row;
+  column-gap: 6px;
+  width: 130px;
+  padding: 4px;
+  border: 1px white solid;
+  border-radius: 16px;
+  font-weight: lighter;
+  color: gray;
+  font-size: smaller;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin: 0;
+}
+.card-container__posted p {
+  margin: 0px;
+  padding: 0;
+}
+.card-container__posted img {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  object-fit: contain;
+}
+.card-container__company-info-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+.card-container__company-info__logo__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container__company-info__logo {
+  object-fit: contain;
+}
+.card-container__company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card-container__company-info h2 {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 15px;
+  color: gray;
+}
+.card-container__company-info h1 {
+  margin: 0px;
+  font-weight: normal;
+  font-size: 15px;
+  color: black;
+}
+.card-container__company-info p {
+  margin: 0px;
+  font-weight: lighter;
+  font-size: 10px;
+}
+.card-container__salary {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2px;
+  font-size: 18px;
+  color: black;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-container__salary img {
+  object-fit: contain;
+}
+.card-container__about {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  position: relative;
+}
+.card-container__about h1 {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: normal;
+}
+.card-container__about h2 {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.card-container__about p {
+  margin: 0px;
+  opacity: 0.9;
+  text-align: justify;
+  font-weight: 100;
+}
+
+.fade-text {
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.show-full {
+  max-height: none;
+}
+
+.view-more {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+.foggy-text {
+  opacity: 0.3;
+}
+.card-container__exp {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+.card-container__exp h3 {
+  margin: 0;
+  color: gray;
+  font-size: 15px;
+}
+.card-container__exp p {
+  margin: 0;
+  color: black;
+  opacity: 0.8;
+  font-size: 18px;
+}
+.card-container__btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.easy-apply-btn {
+  display: flex;
+  flex-direction: row;
+  column-gap: 6px;
+  width: 95%;
+  padding: 10px 6px;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: black !important;
+  background-color: #56eac3;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.easy-apply-btn__img-cont {
+  display: flex;
+}
+.easy-apply-btn__img-cont img {
+  object-fit: fill;
+}
+.referral-btn {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  width: 95%;
+  padding: 10px 6px;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #4d45db;
+  font-size: 15px;
+  font-weight: 100;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.referral-btn__img_cont {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3px;
+}
+.referral-btn__img_cont img {
+  border-radius: 100%;
+  object-fit: fill;
+  filter: blur(1px);
 }
