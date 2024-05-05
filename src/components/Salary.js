@@ -1,10 +1,11 @@
 import React from "react";
 import right from "../assets/right.png";
 
-const Salary = () => {
+const Salary = ({ minSalary, maxSalary, currency }) => {
   return (
     <div className="card-container__salary">
-      Estimated Salary: 4LPA - 12LPA
+      Estimated Salary: {currency} {minSalary ? minSalary : ""}{" "}
+      {minSalary ? "-" : ""} {maxSalary ? maxSalary : ""}
       <span>
         <img src={right} alt="right-icon" width={20} height={20} />
       </span>

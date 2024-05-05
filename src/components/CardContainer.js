@@ -6,7 +6,7 @@ import CompanyInfo from "./CompanyInfo";
 import About from "./About";
 import ReferralButton from "./ReferralButton";
 
-const CardContainer = () => {
+const CardContainer = ({ job }) => {
   return (
     <div className="card-container">
       <div className="card-container__posted">
@@ -15,12 +15,21 @@ const CardContainer = () => {
         </div>
         <p>Posted 11 days ago</p>
       </div>
-      <CompanyInfo />
-      <Salary />
-      <About />
+      <CompanyInfo
+        location={job.location}
+        companyName={job.companyName}
+        jobRole={job.jobRole}
+        logoUrl={job.logoUrl}
+      />
+      <Salary
+        minSalary={job.minJdSalary}
+        maxSalary={job.maxJdSalary}
+        currency={job.salaryCurrencyCode}
+      />
+      <About jobDetailsFromCompany={job.jobDetailsFromCompany} />
       <div className="card-container__exp">
         <h3>Minimum experience</h3>
-        <p>5-7 years</p>
+        <p>{job.minExp ? job.minExp : "0"} years</p>
       </div>
       {/* Buttons container */}
       <div className="card-container__btn-container">
