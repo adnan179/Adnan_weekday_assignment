@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CardContainer from "./components/CardContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs } from "./redux/slice/jobs";
@@ -8,6 +8,8 @@ const App = () => {
   const dispatch = useDispatch();
   const jobsState = useSelector((state) => state.jobs);
   const bottomBoundaryRef = useRef(null);
+
+  const [company, setCompany] = useState(null);
 
   useEffect(() => {
     dispatch(fetchJobs());
@@ -42,16 +44,30 @@ const App = () => {
     };
   }, [jobsState.isLoading, jobsState.isError, dispatch]);
 
+  const handleSearchChange = (searchValue) => {
+    setCompany(searchValue);
+    console.log(company);
+  };
+
   return (
     <div className="app">
       <div>
-        <Filters />
+        <Filters onSearchChange={handleSearchChange} />
       </div>
       <div className="card-grid">
-        {jobsState.data &&
+        {!company &&
+          jobsState.data &&
           jobsState.data.map((job, index) => (
             <CardContainer key={index} job={job} />
           ))}
+        {company &&
+          jobsState.data &&
+          jobsState.data
+            .filter((job) =>
+              job.companyName.toLowerCase().includes(company.toLowerCase())
+            )
+            .map((job, index) => <CardContainer key={index} job={job} />)}
+
         <div ref={bottomBoundaryRef} style={{ height: "10px" }} />
       </div>
     </div>

@@ -48,22 +48,4 @@ const JobsSlice = createSlice({
   },
 });
 
-export default JobsSlice.reducer;
-
-export const updateJobsByCompanyName = createSlice({
-  name: "jobsByCompanyName",
-  initialState: {
-    data: [],
-  },
-  reducers: {
-    filterJobsByCompanyName: (state, action) => {
-      const { jobs, companyName } = action.payload;
-      state.data = jobs.filter((job) =>
-        job.companyName.toLowerCase().includes(companyName.toLowerCase())
-      );
-    },
-  },
-});
-
-export const { filterJobsByCompanyName } = updateJobsByCompanyName.actions;
-export const updateJobsByCompanyNameReducer = updateJobsByCompanyName.reducer;
+export const jobsReducer = JobsSlice.reducer;

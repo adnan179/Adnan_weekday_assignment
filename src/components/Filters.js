@@ -4,7 +4,7 @@ import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { Experiences, Locations, Salaries } from "../data/data";
 
-const Filters = ({ jobsData, handleFilterChange }) => {
+const Filters = ({ handleFilterChange, onSearchChange }) => {
   const [selectedFilters, setSelectedFilters] = useState({
     experience: "",
     salary: "",
@@ -12,7 +12,7 @@ const Filters = ({ jobsData, handleFilterChange }) => {
   });
   const [searchQuery, setSearchQuery] = useState("");
   const dispatch = useDispatch();
-  const allJobs = useSelector((state) => state.jobs.data);
+  const jobsData = useSelector((state) => state.jobs.data);
 
   //menu-items for the filters
   const experiences = Array.from(
@@ -40,6 +40,8 @@ const Filters = ({ jobsData, handleFilterChange }) => {
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
+    console.log(event.target.value);
+    onSearchChange(event.target.value);
   };
 
   return (
