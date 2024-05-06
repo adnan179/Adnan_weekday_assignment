@@ -14,9 +14,13 @@ const About = ({ jobDetailsFromCompany }) => {
       <p className={`fade-text ${showFullText ? "show-full" : ""}`}>
         {jobDetailsFromCompany}
       </p>
-      {!showFullText && (
+      {!showFullText ? (
         <div className="view-more" onClick={toggleFullText}>
           View Job
+        </div>
+      ) : (
+        <div className="view-less" onClick={toggleFullText}>
+          View Less
         </div>
       )}
     </div>
