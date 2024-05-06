@@ -1,5 +1,5 @@
 # Weekday Assessment:
-The application is created using `React`. The data is fetched from the API and stored using `Redux`. The jobs are filtered using either `minExp`, `minJdSalary`, `location`, or `companyName` when searched in the search bar. Select the filters from the dropdown menu and click `Apply filters` to filter the jobs. Use the search bar to search for a job using `companyName`. Click on `Easy Apply` to navigate to the job link. Click on the `view job` to see the hidden text. The website is responsive for desktops, laptops, tablets, and mobiles.
+The application is created using `React`. The data is fetched from the API and stored using `Redux`. The dropdown menus are developed using `material-UI`. The jobs are filtered using either `minExp`, `minJdSalary`, `location`, or `companyName` when searched in the search bar. Select the filters from the dropdown menu and click `Apply filters` to filter the jobs. Use the search bar to search for a job using `companyName`. Click on `Easy Apply` to navigate to the job link. Click on the `view job` to see the hidden text. The website is responsive for desktops, laptops, tablets, and mobiles.
 
 ### Steps:
 1. Git clone the project to your system using `git clone <project_url>`
