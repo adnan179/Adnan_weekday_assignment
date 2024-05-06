@@ -186,11 +186,16 @@
   gap: 10px;
   align-items: center;
 }
+.easy-apply {
+  display: flex;
+  width: 95%;
+  text-decoration: none;
+}
 .easy-apply-btn {
   display: flex;
   flex-direction: row;
   column-gap: 6px;
-  width: 95%;
+  width: 100%;
   padding: 10px 6px;
   border: none;
   border-radius: 10px;
@@ -201,6 +206,7 @@
   background-color: #56eac3;
   font-size: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
 }
 .easy-apply-btn__img-cont {
   display: flex;
@@ -223,6 +229,7 @@
   font-size: 15px;
   font-weight: 100;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
 }
 .referral-btn__img_cont {
   display: flex;
